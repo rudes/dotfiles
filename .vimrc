@@ -30,6 +30,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-tbone'
 Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-pathogen'
 Plugin 'godlygeek/tabular'
 call vundle#end()
 
