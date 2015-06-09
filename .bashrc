@@ -5,15 +5,20 @@
 # ================================= #
 # ============ ALIASES ============ #
 # ================================= #
+alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias la='ls -a'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias cls='clear'
+alias grep='grep --color=auto'
+alias egrep='grep --color=auto'
+alias fgrep='grep --color=auto'
 alias openfire='/opt/openfire/bin/openfire'
 alias ,ev='vim ~/.vimrc'
 alias ,et='vim ~/.tmux.conf'
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # ================================= #
 # ============ GLOBALS ============ #

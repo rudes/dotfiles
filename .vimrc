@@ -7,7 +7,10 @@ let g:mapleader = ','
 set number
 set background=dark
 set ruler
-set laststatus=2
+set laststatus=1
+set backspace=indent,eol,start
+set ttyfast
+set title
 
 " ================================= "
 " ============ PLUGINS ============ "
@@ -32,6 +35,9 @@ Plugin 'tpope/vim-tbone'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-pathogen'
 Plugin 'godlygeek/tabular'
+Plugin 'vim-scripts/c.vim'
+Plugin 'justmao945/vim-clang'
+Plugin 'fatih/vim-go'
 call vundle#end()
 
 filetype plugin indent on
@@ -44,10 +50,22 @@ nmap <leader>k :NERDTreeToggle<cr>
 " ============= INDENT ============ "
 " ================================= "
 
-set tabstop=2
-" set smarttab
+set tabstop=1
+set noexpandtab
+set smarttab
 " set smartindent
 " set autoindent
+
+" ================================= "
+" ============= GOLANG ============ "
+" ================================= "
+
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_constraints = 1
+let g:go_fmt_command = "goimports"
 
 " ================================= "
 " ============= COLORS ============ "
@@ -73,15 +91,30 @@ let g:airline_right_sep='|'
 " ============ KEYBINDS =========== "
 " ================================= "
 
+"Increase scroll speed
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
+"Edit vimrc ,ev
 map <leader>ev :e! ~/.vimrc<cr>
+"Edit .tmux.conf ,et
 map <leader>et :e! ~/.tmux.conf<cr>
 
-map <leader>sa :w<cr>
-map <leader>sq :wq<cr>
+"save file with ,,
+map <leader>, :w<cr>
+"save and close with ,.
+map <leader>. :wq<cr>
+"force close all ,fo
 map <leader>fo :qa!<cr>
+"Install plugins ,pi
+map <leader>pi :PluginInstall<cr>
+"Update plugins ,pu
+map <leader>pu :PluginUpdate<cr>
+"Source changes in vimrc so i don't have to reopen vim
+map <leader>r :source ~/.vimrc<cr> \| :echom "Config Reloaded"<cr>
+
+"Toggle highlighting
+noremap <space> :set hlsearch! hlsearch?<cr>
 
 " ================================= "
 " ============ FUNCIONS =========== "
