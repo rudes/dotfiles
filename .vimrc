@@ -11,6 +11,8 @@ set laststatus=1
 set backspace=indent,eol,start
 set ttyfast
 set title
+set undofile
+set undodir=~/.vim/undodir
 
 " ================================= "
 " ============ PLUGINS ============ "
@@ -39,6 +41,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'vim-scripts/c.vim'
 Plugin 'justmao945/vim-clang'
 Plugin 'fatih/vim-go'
+Plugin 'ntpeters/vim-better-whitespace'
 call vundle#end()
 
 filetype plugin indent on
@@ -113,7 +116,10 @@ map <leader>pi :PluginInstall<cr>
 map <leader>pu :PluginUpdate<cr>
 "Source changes in vimrc so i don't have to reopen vim
 map <leader>r :source ~/.vimrc<cr> \| :echom "Config Reloaded"<cr>
-
+"Strip all whitespace from file using ntpeters/vim-better-whitespace
+map <leader>w :StripWhitespace<cr>
+"Delete one line without overriding clipboard
+map <leader>d "_dd
 "Toggle highlighting
 noremap <space> :set hlsearch! hlsearch?<cr>
 
