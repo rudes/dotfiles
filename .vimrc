@@ -120,6 +120,10 @@ map <leader>r :source ~/.vimrc<cr> \| :echom "Config Reloaded"<cr>
 map <leader>w :StripWhitespace<cr>
 "Delete one line without overriding clipboard
 map <leader>d "_dd
+"Add error handling in go code
+map <leader>err :r~/.vim/goerr<cr> 2jo
+"Creates folds of visual blocks
+vmap <leader>f :fold<cr>
 "Toggle highlighting
 noremap <space> :set hlsearch! hlsearch?<cr>
 
