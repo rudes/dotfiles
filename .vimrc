@@ -25,11 +25,8 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'kien/ctrlp.vim'
+" Tpopes Private Section
 Plugin 'tpope/vim-fugitive'
-Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
@@ -37,11 +34,22 @@ Plugin 'tpope/vim-tbone'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-pathogen'
-Plugin 'godlygeek/tabular'
+" File Finder
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/syntastic'
+" Syntax
 Plugin 'vim-scripts/c.vim'
 Plugin 'justmao945/vim-clang'
 Plugin 'fatih/vim-go'
+Plugin 'godlygeek/tabular'
 Plugin 'ntpeters/vim-better-whitespace'
+" Colors
+Plugin 'antlypls/vim-colors-codeschool'
+Plugin 'bling/vim-airline'
+Plugin 'duythinht/vim-coffee'
+Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'gosukiwi/vim-atom-dark'
 call vundle#end()
 
 filetype plugin indent on
