@@ -44,6 +44,7 @@ Plugin 'justmao945/vim-clang'
 Plugin 'fatih/vim-go'
 Plugin 'godlygeek/tabular'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'AndrewRadev/splitjoin.vim'
 " Colors
 Plugin 'antlypls/vim-colors-codeschool'
 Plugin 'bling/vim-airline'
