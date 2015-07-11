@@ -27,7 +27,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 " Tpopes Private Section
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-sensible'
+" Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-tbone'
@@ -63,9 +63,12 @@ nmap <leader>k :NERDTreeToggle<cr>
 " ============= INDENT ============ "
 " ================================= "
 
-set tabstop=1
+set tabstop=2
+set softtabstop=2
 set noexpandtab
 set smarttab
+set shiftwidth=2
+set shiftround
 " set smartindent
 " set autoindent
 
