@@ -27,7 +27,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 " Tpopes Private Section
 Plugin 'tpope/vim-fugitive'
-" Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-tbone'
