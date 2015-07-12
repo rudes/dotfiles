@@ -5,13 +5,13 @@ export ZSH=/root/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="clean"
+ZSH_THEME="castle"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -83,13 +83,17 @@ source $ZSH/oh-my-zsh.sh
 # ================================= #
 # ============ ALIASES ============ #
 # ================================= #
+alias rm='rm -iv'
+alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias la='ls -a'
-alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias cls='clear'
 alias openfire='/opt/openfire/bin/openfire'
+alias aweE='vim ~/.config/awesome/rc.lua'
+alias aweT='cd ~/.config/awesome/themes/castle;vim theme.lua'
+alias get='cd ~/github.com/rudes'
 
 # ================================= #
 # =========== FUNCTIONS =========== #
@@ -115,6 +119,9 @@ colortest() {
 # =========== VARIABLES =========== #
 # ================================= #
 
+EDITOR="vim"
+ZSH=~/.oh-my-zsh
+source $ZSH/oh-my-zsh.sh
 PATH=$PATH:$HOME/bin:/usr/lib/golang/bin
 GOPATH=$GOPATH/root/go
 BACKUP=/home/backup/.snapshot
@@ -122,9 +129,18 @@ BACKUP=/home/backup/.snapshot
 set -o vi
 export BACKUP
 export PATH
+export EDITOR
+export ZSH
 
 # ================================= #
 # ============== END ============== #
 # ================================= #
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+conn_wifi() {
+		ip link set wlp2s0 up
+		iw dev wlp2s0 connect "$1"
+		iw dev wlp2s0 link
+		dhcpcd
+}
