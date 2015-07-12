@@ -137,6 +137,8 @@ map <leader>d "_dd
 map <leader>err :r~/.vim/goerr<cr> 2jo
 "Creates folds of visual blocks
 vmap <leader>f :fold<cr>
+"Tabularize mapping for quick formatting
+vmap <leader>t :Tabularize<cr>
 "Toggle highlighting
 noremap <space> :set hlsearch! hlsearch?<cr>
 
