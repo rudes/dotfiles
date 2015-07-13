@@ -126,7 +126,7 @@ PATH=$PATH:$HOME/bin:/usr/lib/golang/bin
 GOPATH=$GOPATH/root/go
 BACKUP=/home/backup/.snapshot
 
-set -o vi
+set -o emacs
 export BACKUP
 export PATH
 export EDITOR
