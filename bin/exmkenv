@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# pull github repo
+# move files to $home
+# clone pathogen, clone vundle
+# build .vim dir
+# move vim repos to .vim
+# remove all git repos
+# source .bash_profile
+
+# Git Repos
+# Vundle: https://github.com/gmarik/Vundle.vim.git
+# Pathogen: https://github.com/tpope/vim-pathogen.git
+
+git clone https://github.com/tpope/vim-pathogen.git $HOME/pathogen
+
+rm -rvf $HOME/.vim
+
+mv -vf $HOME/dotfiles/.bashrc $HOME/dotfiles/.bash_profile $HOME/dotfiles/.vimrc $HOME/dotfiles/.tmux.conf $HOME/dotfiles/.zshrc $HOME/dotfiles/.tcshrc $HOME/dotfiles/.vim $HOME
+
+mkdir -p $HOME/.vim/bundle $HOME/.vim/autoload
+
+mv -vf $HOME/pathogen/autoload/pathogen.vim $HOME/.vim/autoload/pathogen.vim
+
+git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
+
+rm -rvf $HOME/dotfiles $HOME/pathogen
+
