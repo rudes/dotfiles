@@ -7,7 +7,6 @@ let g:mapleader = ','
 set number
 set background=dark
 set ruler
-set laststatus=1
 set backspace=indent,eol,start
 set ttyfast
 set title
@@ -161,6 +160,11 @@ function! s:CloseIfOnlyNerdTreeLeft()
 		endif
 	endif
 endfunction
+
+augroup MyAutoCmd
+	autocmd!
+	autocmd MyAutoCmd BufWritePost $MYVIMRC nested source $MYVIMRC
+augroup end
 
 " ================================= "
 " ============== END ============== "
