@@ -86,12 +86,13 @@ let g:go_fmt_command = "goimports"
 " ============= COLORS ============ "
 " ================================= "
 
+" Overridden by colorscheme
 " Gray Text, Black BG
 " Matches ~/.tmux.conf color scheme
- hi TabLine	ctermfg=59 ctermbg=Black cterm=NONE
- hi TabLineFill	ctermfg=Yellow ctermbg=Black cterm=NONE
+" hi TabLine	ctermfg=59 ctermbg=Black cterm=NONE
+" hi TabLineFill	ctermfg=Yellow ctermbg=Black cterm=NONE
 " Orange Text, Black BG
- hi TabLineSel	ctermfg=94 ctermbg=Black cterm=NONE
+" hi TabLineSel	ctermfg=94 ctermbg=Black cterm=NONE
 
 let g:airline_theme='ubaryd'
 let g:airline_left_sep='|'
@@ -160,11 +161,6 @@ function! s:CloseIfOnlyNerdTreeLeft()
 		endif
 	endif
 endfunction
-
-augroup MyAutoCmd
-	autocmd!
-	autocmd MyAutoCmd BufWritePost $MYVIMRC nested source $MYVIMRC
-augroup end
 
 " ================================= "
 " ============== END ============== "

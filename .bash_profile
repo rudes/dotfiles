@@ -7,7 +7,7 @@ fi
 
 # add $HOME/bin to path
 if [ -d "$HOME/bin" ]; then
-								PATH="$HOME/bin:$PATH"
+	PATH="$HOME/bin:$PATH"
 fi
 
 # User specific environment and startup programs
@@ -24,8 +24,8 @@ BACKUP=/home/backup/.snapshot
 
 # KVM Virtual machines
 if [ -f /usr/bin/virsh ]; then
-								VMS=$(virsh list | grep running | awk '{print $2}')
-								export VMS
+	VMS=$(virsh list | grep running | awk '{print $2}')
+	export VMS
 fi
 
 set -o emacs
