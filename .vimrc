@@ -41,9 +41,11 @@ Plugin 'scrooloose/syntastic'
 Plugin 'vim-scripts/c.vim'
 Plugin 'justmao945/vim-clang'
 Plugin 'fatih/vim-go'
+Plugin 'rudes/vim-java'
 Plugin 'godlygeek/tabular'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'SirVer/ultisnips'
 " Colors
 Plugin 'antlypls/vim-colors-codeschool'
 Plugin 'bling/vim-airline'
@@ -57,6 +59,11 @@ filetype plugin indent on
 let g:NERDTreeQuitOnOpen=0
 let NERDTreeShowHidden=1
 nmap <leader>k :NERDTreeToggle<cr>
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+let g:UltiSnipsEditSplit="vertical"
 
 " ================================= "
 " ============= INDENT ============ "
@@ -98,7 +105,7 @@ let g:airline_theme='ubaryd'
 let g:airline_left_sep='|'
 let g:airline_right_sep='|'
 
-colorscheme Tomorrow-Night-Eighties
+colorscheme desert
 " Tabline.old
 " let g:airline"extensions"tabline"enabled = 1
 " let g:airline"extensions"tabline"left_sep = ' '
