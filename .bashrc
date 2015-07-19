@@ -19,6 +19,10 @@ alias openfire='/opt/openfire/bin/openfire'
 alias ,ev='vim ~/.vimrc'
 alias ,et='vim ~/.tmux.conf'
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+case "$SHELL" in
+	"/bin/bash") alias ,ea='vim ~/.bashrc';;
+	"/bin/zsh") alias ,ea='vim ~/.zshrc';;
+esac
 
 # ================================= #
 # ============ GLOBALS ============ #

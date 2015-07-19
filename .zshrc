@@ -58,11 +58,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
- if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
- else
-   export EDITOR='mvim'
- fi
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -94,6 +94,16 @@ alias openfire='/opt/openfire/bin/openfire'
 alias aweE='vim ~/.config/awesome/rc.lua'
 alias aweT='cd ~/.config/awesome/themes/castle;vim theme.lua'
 alias get='cd ~/github.com/rudes'
+alias grep='grep --color=auto'
+alias egrep='grep --color=auto'
+alias fgrep='grep --color=auto'
+alias ,ev='vim ~/.vimrc'
+alias ,et='vim ~/.tmux.conf'
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+case "$SHELL" in
+	"/bin/bash") alias ,ea='vim ~/.bashrc';;
+	"/bin/zsh") alias ,ea='vim ~/.zshrc';;
+esac
 
 # ================================= #
 # =========== FUNCTIONS =========== #
