@@ -118,7 +118,7 @@ let g:airline_theme='ubaryd'
 let g:airline_left_sep='|'
 let g:airline_right_sep='|'
 
-colorscheme Tomorrow-Night-Eighties
+colorscheme sorcerer
 " Tabline.old
 " let g:airline"extensions"tabline"enabled = 1
 " let g:airline"extensions"tabline"left_sep = ' '
