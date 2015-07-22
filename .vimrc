@@ -49,18 +49,6 @@ Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'SirVer/ultisnips'
 " Colors
 Plugin 'bling/vim-airline'
-" Plugin 'antlypls/vim-colors-codeschool'
-" Plugin 'duythinht/vim-coffee'
-" Plugin 'chriskempson/vim-tomorrow-theme'
-" Plugin 'gosukiwi/vim-atom-dark'
-" Plugin 'Lokaltog/vim-distinguished'
-" Plugin 'jnurmine/Zenburn'
-" Plugin 'zsoltf/vim-maui'
-" Plugin 'MPiccinato/wombat256'
-" Plugin 'blackgate/tropikos-vim-theme'
-" Plugin 'jlund3/colorschemer'
-" Plugin 'orthecreedence/void.vim'
-" Plugin 'vim-scripts/synic.vim'
 Plugin 'adlawson/vim-sorcerer'
 call vundle#end()
 
