@@ -33,6 +33,7 @@ Plugin 'tpope/vim-tbone'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-pathogen'
+Plugin 'tpope/vim-dispatch'
 " File Finder
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
@@ -47,11 +48,8 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'SirVer/ultisnips'
 " Colors
-Plugin 'antlypls/vim-colors-codeschool'
 Plugin 'bling/vim-airline'
-Plugin 'duythinht/vim-coffee'
-Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'gosukiwi/vim-atom-dark'
+Plugin 'adlawson/vim-sorcerer'
 call vundle#end()
 
 filetype plugin indent on
@@ -59,11 +57,14 @@ filetype plugin indent on
 let g:NERDTreeQuitOnOpen=0
 let NERDTreeShowHidden=1
 nmap <leader>k :NERDTreeToggle<cr>
+
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
 let g:UltiSnipsEditSplit="vertical"
+
+autocmd FileType java let b:dispatch = 'javac %'
+nnoremap <F9> :Dispatch<cr>
 
 " ================================= "
 " ============= INDENT ============ "
@@ -105,7 +106,7 @@ let g:airline_theme='ubaryd'
 let g:airline_left_sep='|'
 let g:airline_right_sep='|'
 
-colorscheme desert
+colorscheme sorcerer
 " Tabline.old
 " let g:airline"extensions"tabline"enabled = 1
 " let g:airline"extensions"tabline"left_sep = ' '
