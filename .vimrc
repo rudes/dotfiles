@@ -106,7 +106,10 @@ let g:airline_theme='ubaryd'
 let g:airline_left_sep='|'
 let g:airline_right_sep='|'
 
-colorscheme sorcerer
+" if ~/.vim/bundle/vim-sorcerer
+if isdirectory("~/.vim/bundle/vim-sorcerer")
+	colorscheme sorcerer
+endif
 " Tabline.old
 " let g:airline"extensions"tabline"enabled = 1
 " let g:airline"extensions"tabline"left_sep = ' '
