@@ -17,10 +17,13 @@ GOROOT=/usr/local/go
 GOPATH=$HOME/go
 
 # Add golang variables to PATH
-PATH=$PATH:$GOPATH/bin:$GOROOT/bin
+PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 # rsnapshot location
-BACKUP=/home/backup/.snapshot
+if [ -d "/home/backup/.snapshot" ];then
+	BACKUP=/home/backup/.snapshot
+	export BACKUP
+fi
 
 # KVM Virtual machines
 if [ -f /usr/bin/virsh ]; then
@@ -29,7 +32,7 @@ if [ -f /usr/bin/virsh ]; then
 fi
 
 set -o emacs
-export BACKUP
+export GOROOT
 export GOPATH
 export PATH
 
