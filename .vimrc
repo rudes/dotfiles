@@ -47,6 +47,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'SirVer/ultisnips'
+Plugin 'jdonaldson/vaxe'
 " Colors
 Plugin 'bling/vim-airline'
 Plugin 'adlawson/vim-sorcerer'
@@ -88,6 +89,7 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_constraints = 1
+let g:go_fmt_autosave = 1
 let g:go_fmt_command = "goimports"
 
 " ================================= "
@@ -106,7 +108,13 @@ let g:airline_theme='ubaryd'
 let g:airline_left_sep='|'
 let g:airline_right_sep='|'
 
+" Silently set the colorscheme,
+" keeps from getting errors if it doesn't exist.
 silent! colorscheme sorcerer
+" Show a vertical line at column 80
+set colorcolumn=80
+" Set the colors for the column
+highlight ColorColumn ctermfg=Red cterm=NONE
 " Tabline.old
 " let g:airline"extensions"tabline"enabled = 1
 " let g:airline"extensions"tabline"left_sep = ' '
