@@ -154,7 +154,7 @@ map <leader>d "_dd
 "Add error handling in go code
 map <leader>err :r~/.vim/goerr<cr> 2jo
 "Creates folds of visual blocks
-vmap <leader>f :fold<cr>
+map <leader>f :setlocal foldmethod=syntax<cr>
 "Tabularize mapping for quick formatting
 vmap <leader>t :Tabularize<cr>
 "Toggle highlighting
