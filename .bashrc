@@ -32,8 +32,8 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-if [ -f /~/code ]; then
-	chmod -R 700 /~/code
+if [ -f ~/code ]; then
+	chmod -R 700 ~/code
 fi
 
 # ================================= #
