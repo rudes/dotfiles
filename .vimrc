@@ -66,6 +66,8 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
+let g:syntastic_c_include_dirs = [ '../inc', '../include', 'include' ]
+
 autocmd FileType java let b:dispatch = 'javac %'
 nnoremap <F9> :Dispatch<cr>
 
