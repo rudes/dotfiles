@@ -51,7 +51,8 @@ Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'jdonaldson/vaxe'
 " Colors
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'adlawson/vim-sorcerer'
 call vundle#end()
 
