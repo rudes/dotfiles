@@ -155,7 +155,6 @@ map <leader>w :StripWhitespace<cr>
 "Delete one line without overriding clipboard
 map <leader>d "_dd
 "Add error handling in go code
-"map <leader>err :r~/.vim/goerr<cr> 2jo
 map <leader>err :normal i if err != nil {<esc>olog.Fatal(err)<esc>o}<esc><cr>
 "Creates folds of visual blocks
 map <leader>f :setlocal foldmethod=syntax<cr>
