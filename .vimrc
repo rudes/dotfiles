@@ -12,6 +12,7 @@ set ttyfast
 set title
 set undofile
 set undodir=~/.vim/undodir
+set path+=../inc,inc,../include,include
 
 " ================================= "
 " ============ PLUGINS ============ "
@@ -66,7 +67,8 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
-let g:syntastic_c_include_dirs = [ '../inc', '../include', 'include' ]
+let g:syntastic_cpp_remove_include_errors = 1
+let g:syntastic_c_remove_include_errors = 1
 
 autocmd FileType java let b:dispatch = 'javac %'
 nnoremap <F9> :Dispatch<cr>
