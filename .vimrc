@@ -52,7 +52,8 @@ Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'jdonaldson/vaxe'
 " Colors
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'adlawson/vim-sorcerer'
 call vundle#end()
 
@@ -156,7 +157,7 @@ map <leader>w :StripWhitespace<cr>
 "Delete one line without overriding clipboard
 map <leader>d "_dd
 "Add error handling in go code
-map <leader>err :r~/.vim/goerr<cr> 2jo
+map <leader>err :normal i if err != nil {<esc>olog.Fatal(err)<esc>o}<esc><cr>
 "Creates folds of visual blocks
 map <leader>f :setlocal foldmethod=syntax<cr>
 "Tabularize mapping for quick formatting
