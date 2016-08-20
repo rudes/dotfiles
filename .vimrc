@@ -41,6 +41,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 " Syntax
 Plugin 'vim-scripts/c.vim'
+Plugin 'neovimhaskell/haskell-vim'
 Plugin 'justmao945/vim-clang'
 Plugin 'fatih/vim-go'
 Plugin 'rudes/vim-java'
@@ -78,11 +79,10 @@ nnoremap <F9> :Dispatch<cr>
 " ============= INDENT ============ "
 " ================================= "
 
-set tabstop=2
-set softtabstop=2
-set noexpandtab
-set smarttab
-set shiftwidth=2
+set tabstop=8
+set softtabstop=4
+set expandtab
+set shiftwidth=4
 set shiftround
 " set smartindent
 " set autoindent
