@@ -15,71 +15,63 @@ set undodir=~/.vim/undodir
 set path+=../inc,inc,../include,include
 set listchars=eol:¬,trail:·,nbsp:·
 set list
+set mouse=
 
 " ================================= "
 " ============ PLUGINS ============ "
 " ================================= "
 
-execute pathogen#infect()
 syntax on
 
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.config/nvim/plugged')
+Plug 'junegunn/vim-plug'
 " Tpopes Private Section
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-tbone'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-pathogen'
-Plugin 'tpope/vim-dispatch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-tbone'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-pathogen'
+Plug 'tpope/vim-dispatch'
 " File Finder
-Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'kien/ctrlp.vim'
+Plug 'neomake/neomake'
 " Syntax
-Plugin 'vim-scripts/c.vim'
-Plugin 'vim-scripts/hlint'
-Plugin 'neovimhaskell/haskell-vim'
-Plugin 'bitc/vim-hdevtools'
-Plugin 'Twinside/vim-hoogle'
-Plugin 'justmao945/vim-clang'
-Plugin 'fatih/vim-go'
-Plugin 'rudes/vim-java'
-Plugin 'rust-lang/rust.vim'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'godlygeek/tabular'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'AndrewRadev/splitjoin.vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'jdonaldson/vaxe'
+Plug 'vim-scripts/c.vim'
+Plug 'vim-scripts/hlint', { 'for': 'haskell' }
+Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+Plug 'bitc/vim-hdevtools', { 'for': 'haskell' }
+Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
+Plug 'justmao945/vim-clang'
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'rudes/vim-java', { 'for': 'java' }
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
+Plug 'godlygeek/tabular'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'jdonaldson/vaxe', { 'for': 'haxe' }
+Plug 'benmills/vimux'
 " Colors
-Plugin 'vim-airline/vim-airline'
-Plugin 'guns/xterm-color-table.vim'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'adlawson/vim-sorcerer'
-call vundle#end()
+Plug 'vim-airline/vim-airline'
+Plug 'guns/xterm-color-table.vim', { 'on': 'VXtermColorTable' }
+Plug 'vim-airline/vim-airline-themes'
+Plug 'adlawson/vim-sorcerer'
+call plug#end()
 
 filetype plugin indent on
+
+autocmd! BufWritePost * Neomake
 
 let g:NERDTreeQuitOnOpen=0
 let NERDTreeShowHidden=1
 nmap <leader>k :NERDTreeToggle<cr>
 
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsEditSplit="vertical"
-
-let g:syntastic_cpp_remove_include_errors = 1
-let g:syntastic_c_remove_include_errors = 1
-let g:syntastic_cpp_compiler = 'g++'
-let g:syntastic_cpp_compiler_options = '-std=c++11'
-let b:clang_user_options = '-std=c++11'
+let g:clang_cpp_options = '-std=c++11'
 
 autocmd FileType java let b:dispatch = 'javac %'
 nnoremap <F9> :Dispatch<cr>
@@ -120,9 +112,10 @@ let g:go_fmt_command = "goimports"
 " Orange Text, Black BG
 " hi TabLineSel	ctermfg=94 ctermbg=Black cterm=NONE
 
-let g:airline_theme='ubaryd'
-let g:airline_left_sep='|'
-let g:airline_right_sep='|'
+let g:airline_theme='base16'
+let g:airline_powerline_fonts = 1
+" let g:airline_left_sep='|'
+" let g:airline_right_sep='|'
 
 " Silently set the colorscheme,
 " keeps from getting errors if it doesn't exist.
@@ -132,9 +125,7 @@ set colorcolumn=80
 " Set the colors for the column
 highlight ColorColumn ctermfg=Red cterm=NONE
 " Tabline.old
-" let g:airline"extensions"tabline"enabled = 1
-" let g:airline"extensions"tabline"left_sep = ' '
-" let g:airline"extensions"tabline"left_alt_sep = '|'
+let g:airline#extensions#tabline#enabled = 1
 
 " ================================= "
 " ============ KEYBINDS =========== "
@@ -147,7 +138,7 @@ nnoremap <C-y> 3<C-y>
 nnoremap ; :
 
 "Edit vimrc ,ev
-map <leader>ev :e! ~/.vimrc<cr>
+map <leader>ev :e! ~/.config/nvim/init.vim<cr>
 "Edit .tmux.conf ,et
 map <leader>et :e! ~/.tmux.conf<cr>
 
@@ -157,12 +148,8 @@ map <leader>, :w<cr>
 map <leader>. :wq<cr>
 "force close all ,fo
 map <leader>fo :qa!<cr>
-"Install plugins ,pi
-map <leader>pi :PluginInstall<cr>
-"Update plugins ,pu
-map <leader>pu :PluginUpdate<cr>
 "Source changes in vimrc so i don't have to reopen vim
-map <leader>r :source ~/.vimrc<cr> \| :echom "Config Reloaded"<cr>
+map <leader>r :source ~/.config/nvim/init.vim<cr> \| :echom "Config Reloaded"<cr>
 "Strip all whitespace from file using ntpeters/vim-better-whitespace
 map <leader>w :StripWhitespace<cr>
 "Delete one line without overriding clipboard
@@ -175,6 +162,8 @@ map <leader>f :setlocal foldmethod=syntax<cr>
 vmap <leader>t :Tabularize<cr>
 "Toggle highlighting
 noremap <space> :set hlsearch! hlsearch?<cr>
+"Run cabal test in vimux
+map <leader>ct :call VimuxRunCommand("cabal test --show-details=always --test-options=--color")<cr>
 
 " ================================= "
 " ============ FUNCIONS =========== "

@@ -154,3 +154,6 @@ conn_wifi() {
 		iw dev wlp2s0 link
 		dhcpcd
 }
+
+# added by travis gem
+[ -f /home/rudes/.travis/travis.sh ] && source /home/rudes/.travis/travis.sh
