@@ -13,6 +13,8 @@ set title
 set undofile
 set undodir=~/.vim/undodir
 set path+=../inc,inc,../include,include
+set listchars=eol:¬,trail:·,nbsp:·
+set list
 
 " ================================= "
 " ============ PLUGINS ============ "
