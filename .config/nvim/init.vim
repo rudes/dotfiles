@@ -2,6 +2,8 @@
 " ============= .vimrc ============ "
 " ================================= "
 
+set encoding=utf-8
+scriptencoding utf-8
 let mapleader = ','
 let g:mapleader = ','
 set number
@@ -13,7 +15,7 @@ set title
 set undofile
 set undodir=~/.vim/undodir
 set path+=../inc,inc,../include,include
-set listchars=eol:¬,trail:·,nbsp:·
+set listchars=tab:\ \ ,eol:¬,trail:·
 set list
 set mouse=
 
@@ -82,11 +84,9 @@ nnoremap <F9> :Dispatch<cr>
 
 set tabstop=8
 set softtabstop=4
-set expandtab
+set noexpandtab
 set shiftwidth=4
 set shiftround
-" set smartindent
-" set autoindent
 
 " ================================= "
 " ============= GOLANG ============ "
@@ -104,18 +104,8 @@ let g:go_fmt_command = "goimports"
 " ============= COLORS ============ "
 " ================================= "
 
-" Overridden by colorscheme
-" Gray Text, Black BG
-" Matches ~/.tmux.conf color scheme
-" hi TabLine	ctermfg=59 ctermbg=Black cterm=NONE
-" hi TabLineFill	ctermfg=Yellow ctermbg=Black cterm=NONE
-" Orange Text, Black BG
-" hi TabLineSel	ctermfg=94 ctermbg=Black cterm=NONE
-
 let g:airline_theme='base16'
 let g:airline_powerline_fonts = 1
-" let g:airline_left_sep='|'
-" let g:airline_right_sep='|'
 
 " Silently set the colorscheme,
 " keeps from getting errors if it doesn't exist.
@@ -124,7 +114,7 @@ silent! colorscheme sorcerer
 set colorcolumn=80
 " Set the colors for the column
 highlight ColorColumn ctermfg=Red cterm=NONE
-" Tabline.old
+" Tabline
 let g:airline#extensions#tabline#enabled = 1
 
 " ================================= "
@@ -158,12 +148,11 @@ map <leader>d "_dd
 map <leader>err :normal i if err != nil {<esc>olog.Fatal(err)<esc>o}<esc><cr>
 "Creates folds of visual blocks
 map <leader>f :setlocal foldmethod=syntax<cr>
-"Tabularize mapping for quick formatting
-vmap <leader>t :Tabularize<cr>
 "Toggle highlighting
 noremap <space> :set hlsearch! hlsearch?<cr>
 "Run cabal test in vimux
-map <leader>ct :call VimuxRunCommand("cabal test --show-details=always --test-options=--color")<cr>
+autocmd FileType haskell map <leader>t :call VimuxRunCommand("cabal test --show-details=always --test-options=--color")<cr>
+autocmd FileType go map <leader>t :call VimuxRunCommand("go test")<cr>
 
 " ================================= "
 " ============ FUNCIONS =========== "
