@@ -24,7 +24,7 @@
 #define   coffee           #c7915b
 #define   darkroast        #88633f
 
-*termName: xterm-256color
+*termName:    xterm-256color
 *background:  blackgravel
 *foreground:  plain
 *cursorColor: lime
