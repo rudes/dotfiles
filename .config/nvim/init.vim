@@ -144,8 +144,12 @@ map <leader>fo :qa!<cr>
 map <leader>r :source ~/.config/nvim/init.vim<cr> \| :echom "Config Reloaded"<cr>
 "Strip all whitespace from file using ntpeters/vim-better-whitespace
 map <leader>w :StripWhitespace<cr>
-"Delete one line without overriding clipboard
-map <leader>d "_dd
+"Delete to system clipboard 
+map <leader>d "*dd
+vmap <leader>d "*dd
+"Paste from system clipboard
+map <leader>p "*p
+vmap <leader>p "*p
 "Add error handling in go code
 map <leader>err :normal i if err != nil {<esc>olog.Fatal(err)<esc>o}<esc><cr>
 "Creates folds of visual blocks
