@@ -18,6 +18,7 @@ set path+=../inc,inc,../include,include
 set listchars=tab:\ \ ,eol:¬,trail:·
 set list
 set mouse=
+let g:tex_flavor = 'latex'
 
 " ================================= "
 " ============ PLUGINS ============ "
@@ -25,7 +26,6 @@ set mouse=
 
 syntax on
 
-filetype off
 call plug#begin('~/.config/nvim/plugged')
 Plug 'junegunn/vim-plug'
 " Tpopes Private Section
@@ -58,6 +58,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'jdonaldson/vaxe', { 'for': 'haxe' }
 Plug 'benmills/vimux'
+Plug 'lervag/vimtex'
 " Colors
 Plug 'vim-airline/vim-airline'
 Plug 'guns/xterm-color-table.vim', { 'on': 'VXtermColorTable' }
