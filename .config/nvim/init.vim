@@ -44,6 +44,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'neomake/neomake'
 " Syntax
 Plug 'vim-scripts/c.vim'
+Plug 'SirVer/ultisnips'
 Plug 'vim-scripts/hlint', { 'for': 'haskell' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'bitc/vim-hdevtools', { 'for': 'haskell' }
@@ -157,6 +158,8 @@ map <leader>err :normal i if err != nil {<esc>olog.Fatal(err)<esc>o}<esc><cr>
 map <leader>f :setlocal foldmethod=syntax<cr>
 "Toggle highlighting
 noremap <space> :set hlsearch! hlsearch?<cr>
+"Better Pasting
+inoremap <expr> <C-R> ShowRegisters()
 "Run cabal test in vimux
 autocmd FileType haskell map <leader>t :call VimuxRunCommand("cabal test --show-details=always --test-options=--color")<cr>
 autocmd FileType go map <leader>t :call VimuxRunCommand("go test")<cr>
@@ -179,6 +182,15 @@ function! s:CloseIfOnlyNerdTreeLeft()
 			endif
 		endif
 	endif
+endfunction
+
+function! ShowRegisters ()
+    registers
+    let char = 0
+    while !char
+	let char = getchar()
+    endwhile
+    return "\<C-R>".nr2char(char)
 endfunction
 
 " ================================= "
