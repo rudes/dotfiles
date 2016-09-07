@@ -175,6 +175,7 @@ map <leader>f :setlocal foldmethod=syntax<cr>
 vmap <leader>t :Tabularize<cr>
 "Toggle highlighting
 noremap <space> :set hlsearch! hlsearch?<cr>
+inoremap <expr> <C-R> ShowRegisters()
 
 " ================================= "
 " ============ FUNCIONS =========== "

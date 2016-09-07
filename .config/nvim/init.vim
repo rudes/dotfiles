@@ -2,8 +2,6 @@
 " ============= .vimrc ============ "
 " ================================= "
 
-set encoding=utf-8
-scriptencoding utf-8
 let mapleader = ','
 let g:mapleader = ','
 set number
@@ -28,6 +26,7 @@ syntax on
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'junegunn/vim-plug'
+Plug 'rudes/vim-pasties'
 " Tpopes Private Section
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
@@ -159,7 +158,8 @@ map <leader>f :setlocal foldmethod=syntax<cr>
 "Toggle highlighting
 noremap <space> :set hlsearch! hlsearch?<cr>
 "Better Pasting
-inoremap <expr> <C-R> ShowRegisters()
+inoremap <expr> <C-R> ShowPasties()
+cnoremap <expr> <C-R> ShowPasties()
 "Run cabal test in vimux
 autocmd FileType haskell map <leader>t :call VimuxRunCommand("cabal test --show-details=always --test-options=--color")<cr>
 autocmd FileType go map <leader>t :call VimuxRunCommand("go test")<cr>
@@ -182,15 +182,6 @@ function! s:CloseIfOnlyNerdTreeLeft()
 			endif
 		endif
 	endif
-endfunction
-
-function! ShowRegisters ()
-    registers
-    let char = 0
-    while !char
-	let char = getchar()
-    endwhile
-    return "\<C-R>".nr2char(char)
 endfunction
 
 " ================================= "
