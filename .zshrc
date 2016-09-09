@@ -157,3 +157,5 @@ conn_wifi() {
 
 # added by travis gem
 [ -f /home/rudes/.travis/travis.sh ] && source /home/rudes/.travis/travis.sh
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

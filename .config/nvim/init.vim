@@ -17,6 +17,9 @@ set listchars=tab:\ \ ,eol:¬,trail:·
 set list
 set mouse=
 let g:tex_flavor = 'latex'
+if &shell =~# 'fish$'
+    set shell=bash
+endif
 
 " ================================= "
 " ============ PLUGINS ============ "
@@ -27,6 +30,8 @@ syntax on
 call plug#begin('~/.config/nvim/plugged')
 Plug 'junegunn/vim-plug'
 Plug 'rudes/vim-pasties'
+Plug 'koljakube/vim-dragvisuals'
+Plug 'atweiden/vim-hudigraphs'
 " Tpopes Private Section
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
@@ -37,12 +42,14 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-pathogen'
 Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-abolish'
 " File Finder
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'kien/ctrlp.vim'
 Plug 'neomake/neomake'
 " Syntax
 Plug 'vim-scripts/c.vim'
+Plug 'dag/vim-fish'
 Plug 'SirVer/ultisnips'
 Plug 'vim-scripts/hlint', { 'for': 'haskell' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
@@ -76,6 +83,7 @@ let NERDTreeShowHidden=1
 nmap <leader>k :NERDTreeToggle<cr>
 
 let g:clang_cpp_options = '-std=c++11'
+let g:DVB_TrimWS = 1
 
 autocmd FileType java let b:dispatch = 'javac %'
 nnoremap <F9> :Dispatch<cr>
@@ -160,6 +168,12 @@ noremap <space> :set hlsearch! hlsearch?<cr>
 "Better Pasting
 inoremap <expr> <C-R> ShowPasties()
 cnoremap <expr> <C-R> ShowPasties()
+"Drag Visual Blocks
+vmap <expr> <LEFT> DVB_Drag('left')
+vmap <expr> <RIGHT> DVB_Drag('right')
+vmap <expr> <DOWN> DVB_Drag('down')
+vmap <expr> <UP> DVB_Drag('up')
+vmap <expr> D DVB_Duplicate()
 "Run cabal test in vimux
 autocmd FileType haskell map <leader>t :call VimuxRunCommand("cabal test --show-details=always --test-options=--color")<cr>
 autocmd FileType go map <leader>t :call VimuxRunCommand("go test")<cr>

@@ -33,10 +33,6 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-if [ -f ~/code ]; then
-	chmod -R 700 ~/code
-fi
-
 # ================================= #
 # =========== FUNCTIONS =========== #
 # ================================= #
@@ -66,3 +62,5 @@ export PATH="$PATH:$HOME/.cabal/bin" # Add CABAL to PATH for haskell
 
 # added by travis gem
 [ -f /home/rudes/.travis/travis.sh ] && source /home/rudes/.travis/travis.sh
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
