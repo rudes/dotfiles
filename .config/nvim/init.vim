@@ -56,7 +56,7 @@ Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'bitc/vim-hdevtools', { 'for': 'haskell' }
 Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
 Plug 'justmao945/vim-clang'
-Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'fatih/vim-go', { 'for': ['go', 'gohtmltmpl'] }
 Plug 'rudes/vim-java', { 'for': 'java' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
