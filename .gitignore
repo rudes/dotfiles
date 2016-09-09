@@ -13,4 +13,6 @@
 !.config/fish/config.fish
 !.i3/config
 !.oh-my-zsh/themes/castle.zsh-theme
+!.tmux/theme.sh
+!.tmux/tmux_status.sh
 !.gitignore

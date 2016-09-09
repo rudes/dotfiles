@@ -29,6 +29,7 @@ syntax on
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'junegunn/vim-plug'
+Plug 'ryanoasis/vim-devicons'
 Plug 'rudes/vim-pasties'
 Plug 'koljakube/vim-dragvisuals'
 Plug 'atweiden/vim-hudigraphs'
