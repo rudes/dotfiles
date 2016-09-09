@@ -1,0 +1,16 @@
+*
+
+!.zshrc
+!.vimrc
+!.tmux.conf
+!.tcshrc
+!.kshrc
+!.i3status.conf
+!.bashrc
+!.bash_profile
+!.Xresources
+!.config/nvim/init.vim
+!.config/fish/config.fish
+!.i3/config
+!.oh-my-zsh/themes/castle.zsh-theme
+!.gitignore
