@@ -22,14 +22,6 @@ switch "$SHELL"
 	alias ,ea='eval $EDITOR ~/.config/fish/config.fish'
 end
 
-function fish_prompt
-    set_color brcyan
-    printf '%sλ%s' (whoami) (hostname) 
-    set_color $fish_color_cwd
-    printf ' %s ' (prompt_pwd)
-    set_color normal
-end
-
 if test -d  "~/bin"
     set -x PATH "~/bin" $PATH
 end
