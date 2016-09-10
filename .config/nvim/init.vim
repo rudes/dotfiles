@@ -29,7 +29,6 @@ syntax on
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'junegunn/vim-plug'
-Plug 'ryanoasis/vim-devicons'
 Plug 'rudes/vim-pasties'
 Plug 'koljakube/vim-dragvisuals'
 Plug 'atweiden/vim-hudigraphs'
@@ -45,7 +44,8 @@ Plug 'tpope/vim-pathogen'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-abolish'
 " File Finder
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'kien/ctrlp.vim'
 Plug 'neomake/neomake'
 " Syntax
@@ -73,6 +73,7 @@ Plug 'guns/xterm-color-table.vim', { 'on': 'VXtermColorTable' }
 Plug 'vim-airline/vim-airline-themes'
 Plug 'adlawson/vim-sorcerer'
 Plug 'sjl/badwolf'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 filetype plugin indent on
@@ -190,13 +191,13 @@ autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 " Close all open buffers on entering a window
 " if the only buffer is NERDTree
 function! s:CloseIfOnlyNerdTreeLeft()
-	if exists("t:NERDTreeBufName")
-		if bufwinnr(t:NERDTreeBufName) != -1
-			if winnr("$") == 1
-				q
-			endif
-		endif
+    if exists("t:NERDTreeBufName")
+	if bufwinnr(t:NERDTreeBufName) != -1
+	    if winnr("$") == 1
+		q
+	    endif
 	endif
+    endif
 endfunction
 
 " ================================= "
