@@ -51,6 +51,7 @@ Plug 'neomake/neomake'
 " Syntax
 Plug 'vim-scripts/c.vim'
 Plug 'dag/vim-fish'
+Plug 'elubow/cql-vim', { 'for': 'cql' }
 Plug 'SirVer/ultisnips'
 Plug 'vim-scripts/hlint', { 'for': 'haskell' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
