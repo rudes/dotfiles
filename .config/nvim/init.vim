@@ -15,6 +15,7 @@ set undodir=~/.vim/undodir
 set path+=../inc,inc,../include,include
 set listchars=tab:\ \ ,eol:¬,trail:·
 set list
+set exrc
 set mouse=
 let g:tex_flavor = 'latex'
 if &shell =~# 'fish$'
