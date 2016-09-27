@@ -123,11 +123,11 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+x exec "lock"
 exec xautolock -time 15 -locker 'lock' &
-exec eval `cat ~/.fehbg`
 exec xrandr --output DVI-I-1 --rate 144
 exec xrandr --output HDMI-0 --auto --left-of DVI-I-1
 exec xrandr --output DVI-D-0 --pos 960x-1080
 exec xrandr --output DVI-D-0 --mode 1920x1080
+exec eval `cat ~/.fehbg`
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
