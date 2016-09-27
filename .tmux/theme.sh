@@ -39,3 +39,4 @@ tm_session_name="$tm_icon #S"
 
 set -g status-left $tm_session_name' '
 set -g status-right $tm_date' | '$tm_host" | "$tm_ip
+set-option -g status-justify centre
