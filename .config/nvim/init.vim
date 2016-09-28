@@ -50,6 +50,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'kien/ctrlp.vim'
 Plug 'neomake/neomake'
 " Syntax
+Plug 'hallettj/jslint.vim'
 Plug 'vim-scripts/c.vim'
 Plug 'dag/vim-fish'
 Plug 'elubow/cql-vim', { 'for': 'cql' }
