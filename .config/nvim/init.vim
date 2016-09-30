@@ -50,7 +50,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'kien/ctrlp.vim'
 Plug 'neomake/neomake'
 " Syntax
-Plug 'hallettj/jslint.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'digitaltoad/vim-pug'
 Plug 'vim-scripts/c.vim'
 Plug 'dag/vim-fish'
 Plug 'elubow/cql-vim', { 'for': 'cql' }
@@ -99,7 +100,7 @@ nnoremap <F9> :Dispatch<cr>
 
 set tabstop=8
 set softtabstop=4
-set noexpandtab
+set expandtab
 set shiftwidth=4
 set shiftround
 
