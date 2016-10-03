@@ -50,6 +50,7 @@ Plugin 'Twinside/vim-hoogle'
 Plugin 'justmao945/vim-clang'
 Plugin 'fatih/vim-go'
 Plugin 'rudes/vim-java'
+Plugin 'rudes/vim-pasties'
 Plugin 'rust-lang/rust.vim'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'godlygeek/tabular'
@@ -175,7 +176,7 @@ map <leader>f :setlocal foldmethod=syntax<cr>
 vmap <leader>t :Tabularize<cr>
 "Toggle highlighting
 noremap <space> :set hlsearch! hlsearch?<cr>
-inoremap <expr> <C-R> ShowRegisters()
+inoremap <expr> <C-R> ShowPasties()
 
 " ================================= "
 " ============ FUNCIONS =========== "
