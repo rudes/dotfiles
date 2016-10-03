@@ -1,6 +1,7 @@
 tm_icon=λ
 
 tm_status_bg="colour235"
+tm_status_fg="colour253"
 tm_message_command_fg="colour222"
 tm_message_command_bg="colour238"
 tm_message_bg="colour238"
@@ -16,6 +17,7 @@ set -g status-interval 5
 set-option -g display-time 4000
 
 set-option -g status-bg $tm_status_bg
+set-option -g status-fg $tm_status_fg
 set-option -g status-attr default
 
 set-window-option -g window-status-fg $tm_window_status_fg
@@ -39,3 +41,4 @@ tm_session_name="$tm_icon #S"
 
 set -g status-left $tm_session_name' '
 set -g status-right $tm_date' | '$tm_host" | "$tm_ip
+set-option -g status-justify centre

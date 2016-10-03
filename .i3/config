@@ -155,3 +155,5 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+exec bash ~/bin/mon
+exec eval `cat ~/.fehbg`

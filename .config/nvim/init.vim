@@ -15,6 +15,7 @@ set undodir=~/.vim/undodir
 set path+=../inc,inc,../include,include
 set listchars=tab:\ \ ,eol:¬,trail:·
 set list
+set exrc
 set mouse=
 let g:tex_flavor = 'latex'
 if &shell =~# 'fish$'
@@ -49,8 +50,11 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'kien/ctrlp.vim'
 Plug 'neomake/neomake'
 " Syntax
+Plug 'pangloss/vim-javascript'
+Plug 'digitaltoad/vim-pug'
 Plug 'vim-scripts/c.vim'
 Plug 'dag/vim-fish'
+Plug 'elubow/cql-vim', { 'for': 'cql' }
 Plug 'vim-scripts/hlint', { 'for': 'haskell' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'bitc/vim-hdevtools', { 'for': 'haskell' }
@@ -95,7 +99,7 @@ nnoremap <F9> :Dispatch<cr>
 
 set tabstop=8
 set softtabstop=4
-set noexpandtab
+set expandtab
 set shiftwidth=4
 set shiftround
 
