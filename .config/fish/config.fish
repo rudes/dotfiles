@@ -12,6 +12,7 @@ alias openfire='/opt/openfire/bin/openfire'
 alias ssh='ssh -X'
 alias ,ev='eval $EDITOR ~/.config/nvim/init.vim'
 alias ,et='eval $EDITOR ~/.tmux.conf'
+alias dco='docker-compose'
 
 switch "$SHELL"
     case "/bin/bash"
