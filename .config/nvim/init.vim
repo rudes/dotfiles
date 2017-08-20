@@ -73,6 +73,7 @@ Plug 'lervag/vimtex'
 " Colors
 Plug 'vim-airline/vim-airline'
 Plug 'guns/xterm-color-table.vim', { 'on': 'VXtermColorTable' }
+Plug 'vim-airline/vim-airline-themes'
 Plug 'ajmwagar/vim-deus'
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
