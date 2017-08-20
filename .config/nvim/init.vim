@@ -73,9 +73,7 @@ Plug 'lervag/vimtex'
 " Colors
 Plug 'vim-airline/vim-airline'
 Plug 'guns/xterm-color-table.vim', { 'on': 'VXtermColorTable' }
-Plug 'vim-airline/vim-airline-themes'
-Plug 'adlawson/vim-sorcerer'
-Plug 'sjl/badwolf'
+Plug 'ajmwagar/vim-deus'
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
@@ -119,13 +117,12 @@ let g:go_fmt_command = "goimports"
 " ============= COLORS ============ "
 " ================================= "
 
-let g:airline_theme='badwolf'
+let g:airline_theme='deus'
 let g:airline_powerline_fonts = 1
 
 " Silently set the colorscheme,
 " keeps from getting errors if it doesn't exist.
-silent! colorscheme badwolf
-let g:badwolf_darkgutter = 1
+silent! colorscheme deus
 " Show a vertical line at column 80
 set colorcolumn=80
 " Set the colors for the column
