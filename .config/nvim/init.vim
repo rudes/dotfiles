@@ -53,7 +53,6 @@ Plug 'neomake/neomake'
 Plug 'pangloss/vim-javascript'
 Plug 'digitaltoad/vim-pug'
 Plug 'vim-scripts/c.vim'
-Plug 'kevinw/pyflakes-vim', { 'for': 'python' }
 Plug 'dag/vim-fish'
 Plug 'elubow/cql-vim', { 'for': 'cql' }
 Plug 'vim-scripts/hlint', { 'for': 'haskell' }
