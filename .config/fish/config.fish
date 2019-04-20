@@ -20,6 +20,8 @@ alias ssh='ssh -X'
 alias ,ev='eval $EDITOR ~/.config/nvim/init.vim'
 alias ,et='eval $EDITOR ~/.tmux.conf'
 alias dco='docker-compose'
+alias dcoup='docker-compose up -d --build'
+alias dcodown='docker-compose down --rmi all --remove-orphans'
 alias dps='docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Image}}"'
 switch "$SHELL"
     case "/bin/bash"
