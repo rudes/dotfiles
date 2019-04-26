@@ -2,17 +2,18 @@
 
 !.zshrc
 !.vimrc
-!.tmux.conf
-!.tcshrc
 !.kshrc
-!.i3status.conf
+!.tigrc
+!.tcshrc
 !.bashrc
-!.bash_profile
-!.Xresources
-!.config/nvim/init.vim
-!.config/fish/config.fish
+!.gitignore
+!.tmux.conf
 !.i3/config
-!.oh-my-zsh/themes/castle.zsh-theme
+!.Xresources
+!.bash_profile
+!.i3status.conf
 !.tmux/theme.sh
 !.tmux/tmux_status.sh
-!.gitignore
+!.config/nvim/init.vim
+!.config/fish/config.fish
+!.oh-my-zsh/themes/castle.zsh-theme

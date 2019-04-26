@@ -1,0 +1,7 @@
+set main-view-date = custom
+set main-view-date-format = "%Y-%m-%d %H:%M"
+
+color cursor color121 color238
+color title-focus color253 color235
+color date color253 default dim
+color author color154 default dim
