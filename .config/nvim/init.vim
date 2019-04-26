@@ -18,6 +18,10 @@ set list
 set exrc
 set mouse=
 let g:tex_flavor = 'latex'
+let g:loaded_python_provider = 1
+let g:loaded_python3_provider = 1
+let g:python3_host_prog = '/usr/bin/python3'
+let g:vimtex_compiler_progname = 'nvr'
 if &shell =~# 'fish$'
     set shell=bash
 endif
@@ -156,7 +160,7 @@ map <leader>fo :qa!<cr>
 map <leader>r :source ~/.config/nvim/init.vim<cr> \| :echom "Config Reloaded"<cr>
 "Strip all whitespace from file using ntpeters/vim-better-whitespace
 map <leader>w :StripWhitespace<cr>
-"Delete to system clipboard 
+"Delete to system clipboard
 map <leader>d "*dd
 vmap <leader>d "*dd
 "Paste from system clipboard
