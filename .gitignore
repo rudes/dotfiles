@@ -13,6 +13,7 @@
 !.bash_profile
 !.i3status.conf
 !.tmux/theme.sh
+!.traefik.dco.yml
 !.tmux/tmux_status.sh
 !.config/nvim/init.vim
 !.config/fish/config.fish
