@@ -16,26 +16,20 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias ssh='ssh -X'
-alias ,ev='vim ~/.vimrc'
-alias ,et='vim ~/.tmux.conf'
+alias ,ev='nvim ~/.config/nvim/init.vim'
+alias ,et='nvim ~/.tmux.conf'
 alias dco='docker-compose'
 alias dps='docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Image}}"'
-case "$SHELL" in
-	"/bin/bash") alias ,ea='vim ~/.bashrc';;
-	"/bin/zsh") alias ,ea='vim ~/.zshrc';;
-	"/usr/bin/fish") alias ,ea='vim ~/.config/fish/config.fish';;
-esac
+alias ,ea='nvim ~/.bashrc'
 
 # ================================= #
 # ============ GLOBALS ============ #
 # ================================= #
-export PATH="$PATH:$HOME/.rvm/bin"
-export PATH="$PATH:$HOME/.cabal/bin"
+export PS1="\\w\[\033[0;32m\]\$(__git_ps1 ' (%s)')\[\033[0m\] \$ "
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-export LD_LIBRARY_PATH=/usr/lib/neko
-export PATH="$PATH:$HOME/.rvm/bin"
-[ -f /etc/bashrc ] && source /etc/bashrc
-[ -f /home/rudes/.travis/travis.sh ] && source /home/rudes/.travis/travis.sh
+export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
+. /etc/bash_completion
+export GPG_TTY=$(tty)
 
 # ================================= #
 # ============== END ============== #
