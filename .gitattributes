@@ -1,0 +1,2 @@
+.local/share/fonts/DejaVu[[:space:]]Sans[[:space:]]Mono[[:space:]]for[[:space:]]Powerline[[:space:]]Nerd[[:space:]]Font.ttf filter=lfs diff=lfs merge=lfs -text
+.local/share/fonts/DejaVu[[:space:]]Sans[[:space:]]Mono[[:space:]]for[[:space:]]Powerline[[:space:]]Nerd[[:space:]]Font[[:space:]]Windows[[:space:]]Compatible.ttf filter=lfs diff=lfs merge=lfs -text
