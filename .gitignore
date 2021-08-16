@@ -11,6 +11,7 @@
 !.i3/config
 !.Xresources
 !.bash_profile
+!.gitattributes
 !.i3status.conf
 !.tmux/theme.sh
 !.traefik.dco.yml
