@@ -1,21 +1,13 @@
 *
 
-!.zshrc
-!.vimrc
-!.kshrc
 !.tigrc
-!.tcshrc
 !.bashrc
 !.gitignore
 !.tmux.conf
-!.i3/config
 !.Xresources
 !.bash_profile
 !.gitattributes
-!.i3status.conf
 !.tmux/theme.sh
 !.traefik.dco.yml
 !.tmux/tmux_status.sh
 !.config/nvim/init.vim
-!.config/fish/config.fish
-!.oh-my-zsh/themes/castle.zsh-theme
