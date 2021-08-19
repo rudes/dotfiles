@@ -10,6 +10,7 @@ alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias la='ls -a'
 alias rm='rm -i'
+alias fzf='fzf --height 40%'
 alias cp='cp -i'
 alias mv='mv -i'
 alias cls='clear'
@@ -30,7 +31,8 @@ alias dps='docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Image}}"'
 # ============ GLOBALS ============ #
 # ================================= #
 
-. /etc/bash_completion
+source /etc/bash_completion
+source /usr/share/doc/fzf/examples/key-bindings.bash
 export EDITOR=nvim
 export GPG_TTY=$(tty)
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin

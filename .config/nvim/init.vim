@@ -131,6 +131,8 @@ map <leader>p "*p
 vmap <leader>p "*p
 "Creates folds of visual blocks
 map <leader>f :setlocal foldmethod=syntax<cr>
+"Search and replace all of last highlighted text
+nnoremap <leader>c :%s///g<left><left>
 "Toggle highlighting
 noremap <space> :set hlsearch! hlsearch?<cr>
 "Drag Visual Blocks
