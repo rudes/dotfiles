@@ -2,24 +2,21 @@
 " ============= .vimrc ============ "
 " ================================= "
 
-let mapleader = ','
-let g:mapleader = ','
+set exrc
+set title
+set ruler
 set number
 set background=dark
-set ruler
 set backspace=indent,eol,start
-set ttyfast
-set title
 set undofile
 set undodir=~/.vim/undodir
-set path+=../inc,inc,../include,include
-set exrc
-set mouse=
+set expandtab
 set tabstop=8
 set softtabstop=4
-set expandtab
-set shiftwidth=4
 set shiftround
+set shiftwidth=4
+let mapleader = ','
+let g:mapleader = ','
 
 " ================================= "
 " ============ PLUGINS ============ "
@@ -29,45 +26,32 @@ syntax on
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'junegunn/vim-plug'
-Plug 'rudes/vim-pasties'
-Plug 'koljakube/vim-dragvisuals'
-Plug 'atweiden/vim-hudigraphs'
 " Tpopes Private Section
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-tbone'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-pathogen'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-abolish'
-" File Finder
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'kien/ctrlp.vim'
+" Tools
 Plug 'neomake/neomake'
 " Syntax
-Plug 'pangloss/vim-javascript'
-Plug 'vim-scripts/c.vim'
 Plug 'justmao945/vim-clang'
 Plug 'fatih/vim-go', { 'for': ['go', 'gohtmltmpl'] }
-Plug 'rudes/vim-java', { 'for': 'java' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-Plug 'godlygeek/tabular'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'AndrewRadev/splitjoin.vim'
 " Colors
-Plug 'vim-airline/vim-airline'
-Plug 'guns/xterm-color-table.vim', { 'on': 'VXtermColorTable' }
-Plug 'vim-airline/vim-airline-themes'
-Plug 'ajmwagar/vim-deus'
+Plug 'jacoborus/tender.vim'
 Plug 'ryanoasis/vim-devicons'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" File Finder
+Plug 'kien/ctrlp.vim'
 call plug#end()
 
 filetype plugin indent on
 
+"Automatically call neomake on save (check erros with ,e)
 autocmd! BufWritePost * Neomake
 
 " ================================= "
@@ -80,20 +64,19 @@ let g:loaded_python_provider = 1
 let g:loaded_python3_provider = 1
 let g:python3_host_prog = '/usr/bin/python3'
 let g:clang_cpp_options = '-std=c++11'
-let g:DVB_TrimWS = 1
-let g:NERDTreeQuitOnOpen=0
-let NERDTreeShowHidden=1
 
 " ================================= "
 " ============= COLORS ============ "
 " ================================= "
 
-let g:airline_theme='deus'
-let g:airline_powerline_fonts = 1
 " Silently set the colorscheme,
 " keeps from getting errors if it doesn't exist.
-silent! colorscheme deus
-" Tabline
+silent! colorscheme tender
+" Airline/Tabline
+let g:airline_theme='tender'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
 " ================================= "
@@ -105,64 +88,32 @@ nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 " Does semi-colon even do anything? no
 nnoremap ; :
-
 "Edit vimrc ,ev
 map <leader>ev :e! ~/.config/nvim/init.vim<cr>
 "Edit .tmux.conf ,et
 map <leader>et :e! ~/.tmux.conf<cr>
-
 "save file with ,,
 map <leader>, :w<cr>
 "save and close with ,.
 map <leader>. :wq<cr>
-"force close all ,fo
-map <leader>fo :qa!<cr>
-"open nerdtree ,k
-nmap <leader>k :NERDTreeToggle<cr>
-"Source changes in vimrc so i don't have to reopen vim
-map <leader>r :source ~/.config/nvim/init.vim<cr> \| :echom "Config Reloaded"<cr>
-"Strip all whitespace from file using ntpeters/vim-better-whitespace
-map <leader>w :StripWhitespace<cr>
+"View neomake error list ,e
+map <leader>e :lopen<cr>
 "Delete to system clipboard
 map <leader>d "*dd
 vmap <leader>d "*dd
 "Paste from system clipboard
 map <leader>p "*p
 vmap <leader>p "*p
-"Creates folds of visual blocks
-map <leader>f :setlocal foldmethod=syntax<cr>
 "Search and replace all of last highlighted text
 nnoremap <leader>c :%s///g<left><left>
 "Toggle highlighting
 noremap <space> :set hlsearch! hlsearch?<cr>
-"Drag Visual Blocks
-vmap <expr> <LEFT> DVB_Drag('left')
-vmap <expr> <RIGHT> DVB_Drag('right')
-vmap <expr> <DOWN> DVB_Drag('down')
-vmap <expr> <UP> DVB_Drag('up')
-vmap <expr> D DVB_Duplicate()
-"Run cabal test in vimux
+"Strip all whitespace from file using ntpeters/vim-better-whitespace
+map <leader>w :StripWhitespace<cr>
+"Source changes in vimrc so i don't have to reopen vim
+map <leader>r :source ~/.config/nvim/init.vim<cr> \| :echom "Config Reloaded"<cr>
+"Run go test in vimux
 autocmd FileType go map <leader>t :call VimuxRunCommand("go test")<cr>
-
-" ================================= "
-" ============ FUNCIONS =========== "
-" ================================= "
-
-" Stolen from some Janus Repo Shit
-" carlhuda/janus
-autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
-
-" Close all open buffers on entering a window
-" if the only buffer is NERDTree
-function! s:CloseIfOnlyNerdTreeLeft()
-    if exists("t:NERDTreeBufName")
-	if bufwinnr(t:NERDTreeBufName) != -1
-	    if winnr("$") == 1
-		q
-	    endif
-	endif
-    endif
-endfunction
 
 " ================================= "
 " ============== END ============== "
