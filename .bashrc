@@ -29,12 +29,17 @@ alias dps='docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Image}}"'
 # ============ GLOBALS ============ #
 # ================================= #
 
-source /etc/bash_completion
 export EDITOR=nvim
 export GPG_TTY=$(tty)
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
-export PS1="\\w\[\033[0;32m\]\$(__git_ps1 ' (%s)')\[\033[0m\] \$ "
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+if [ -f "/etc/bash_completion" ]; then
+	source /etc/bash_completion
+	export PS1="\\w\[\033[0;32m\]\$(__git_ps1 ' (%s)')\[\033[0m\] \$ "
+fi
+if [ -f "$HOME/.cargo/env" ]; then
+	. "$HOME/.cargo/env"
+fi
 
 # ================================= #
 # ============== END ============== #
