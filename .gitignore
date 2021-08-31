@@ -6,7 +6,5 @@
 !.tmux.conf
 !.Xresources
 !.bash_profile
-!.tmux/theme.sh
 !.traefik.dco.yml
-!.tmux/tmux_status.sh
 !.config/nvim/init.vim
