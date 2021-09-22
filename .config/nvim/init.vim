@@ -43,8 +43,9 @@ Plug 'tpope/vim-pathogen'
 Plug 'neomake/neomake'
 " Syntax
 Plug 'justmao945/vim-clang'
-Plug 'fatih/vim-go', { 'for': ['go', 'gohtmltmpl'] }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'fatih/vim-go', { 'for': ['go', 'gohtmltmpl'] }
+Plug 'vim-python/python-syntax', { 'for': 'python' }
 Plug 'ntpeters/vim-better-whitespace'
 " Colors
 Plug 'jacoborus/tender.vim'
@@ -66,6 +67,7 @@ autocmd! BufWritePost * Neomake
 
 let g:go_fmt_autosave = 1
 let g:go_fmt_command = "goimports"
+let g:python_highlight_all = 1
 let g:loaded_python_provider = 1
 let g:loaded_python3_provider = 1
 let g:python3_host_prog = '/usr/bin/python3'
