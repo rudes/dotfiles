@@ -4,7 +4,6 @@
 !.bashrc
 !.gitignore
 !.tmux.conf
-!.Xresources
 !.bash_profile
 !.traefik.dco.yml
 !.config/nvim/init.vim
