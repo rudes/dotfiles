@@ -36,13 +36,15 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 [ -d "$HOME/bin" ] && export PATH=$PATH:$HOME/bin
-[ -d "$HOME/.goenv" ] && export PATH=$PATH:$HOME/.goenv/bin
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+if [ -d "$HOME/.goenv" ];then
+    export PATH=$PATH:$HOME/.goenv/bin
+    eval "$(goenv init -)"
+fi
 if [ -f "/etc/bash_completion" ]; then
 	source /etc/bash_completion
 	export PS1="\\w\[\033[0;32m\]\$(__git_ps1 ' (%s)')\[\033[0m\] \$ "
 fi
-eval "$(goenv init -)"
 
 # ================================= #
 # ============== END ============== #
