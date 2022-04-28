@@ -41,6 +41,9 @@ if [ -d "$HOME/.goenv" ];then
     export PATH=$PATH:$HOME/.goenv/bin
     eval "$(goenv init -)"
 fi
+if [ -d "/usr/local/go" ];then
+    export PATH=$PATH:/usr/local/go/bin
+fi
 if [ -f "/etc/bash_completion" ]; then
 	source /etc/bash_completion
 	export PS1="\\w\[\033[0;32m\]\$(__git_ps1 ' (%s)')\[\033[0m\] \$ "
