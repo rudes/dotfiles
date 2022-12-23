@@ -48,7 +48,7 @@ Plug 'fatih/vim-go', { 'for': ['go', 'gohtmltmpl'] }
 Plug 'vim-python/python-syntax', { 'for': 'python' }
 Plug 'ntpeters/vim-better-whitespace'
 " Colors
-Plug 'jacoborus/tender.vim'
+Plug 'kvrohit/mellow.nvim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -79,9 +79,9 @@ let g:clang_cpp_options = '-std=c++11'
 
 " Silently set the colorscheme,
 " keeps from getting errors if it doesn't exist.
-silent! colorscheme tender
+silent! colorscheme mellow
 " Airline/Tabline
-let g:airline_theme='tender'
+let g:airline_theme='atomic'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_powerline_fonts = 1
