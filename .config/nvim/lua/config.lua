@@ -1,6 +1,7 @@
 vim.o.title = true
 vim.o.ruler = true
 vim.o.number = true
+vim.o.mouse = false
 
 vim.o.syntax = "on"
 vim.o.background = "dark"
