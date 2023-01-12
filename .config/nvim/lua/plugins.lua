@@ -24,6 +24,7 @@ return require('packer').startup(function(use)
   use 'neomake/neomake'
   -- syntax
   use 'justmao945/vim-clang'
+  use 'lewis6991/gitsigns.nvim'
   use {'fatih/vim-go', ft = {'go', 'gohtmltmpl'}}
   use {'rust-lang/rust.vim', ft = 'rust'}
   use {'stephpy/vim-yaml', ft = 'yml' }
@@ -34,7 +35,10 @@ return require('packer').startup(function(use)
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
   -- file finder
-  use 'kien/ctrlp.vim'
+  use {
+      'nvim-telescope/telescope.nvim',
+      requires = {{'nvim-lua/plenary.nvim'}}
+  }
 
   if packer_bootstrap then
     require('packer').sync()
