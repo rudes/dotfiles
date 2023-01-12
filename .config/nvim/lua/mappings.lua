@@ -19,4 +19,3 @@ nmap('<leader>r', ':luafile ~/.config/nvim/init.lua<cr>')
 nmap('<space>', ':set hlsearch! hlsearch?<cr>')
 
 nmap('<leader>w', ':StripWhitespace<cr>')
-

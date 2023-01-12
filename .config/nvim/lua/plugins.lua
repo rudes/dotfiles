@@ -20,20 +20,20 @@ return require('packer').startup(function(use)
   use 'tpope/vim-tbone'
   use 'tpope/vim-commentary'
   use 'tpope/vim-pathogen'
-  -- Tools
+  -- tools
   use 'neomake/neomake'
-  -- Syntax
+  -- syntax
   use 'justmao945/vim-clang'
   use {'fatih/vim-go', ft = {'go', 'gohtmltmpl'}}
   use {'rust-lang/rust.vim', ft = 'rust'}
   use {'stephpy/vim-yaml', ft = 'yml' }
   use 'ntpeters/vim-better-whitespace'
-  -- Colors
+  -- colors
   use 'NLKNguyen/papercolor-theme'
   use 'ryanoasis/vim-devicons'
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
-  -- File Finder
+  -- file finder
   use 'kien/ctrlp.vim'
 
   if packer_bootstrap then
