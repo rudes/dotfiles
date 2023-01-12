@@ -15,7 +15,7 @@ let g:airline#extensions#tabline#enabled = 1
 ]])
 
 vim.o.undofile = true
-vim.o.undodir = "~/.vim/undodir"
+vim.o.undodir = os.getenv("HOME") .. "/.vim/undodir"
 
 vim.o.backspace = "indent,eol,start"
 
