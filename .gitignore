@@ -6,4 +6,6 @@
 !.tmux.conf
 !.bash_profile
 !.traefik.dco.yml
-!.config/nvim/init.vim
+!.config/nvim/init.lua
+!.config/nvim/lua/
+!.config/nvim/lua/*.lua
