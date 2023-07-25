@@ -22,7 +22,7 @@ alias ,ea='$EDITOR ~/.bashrc'
 alias ,et='$EDITOR ~/.tmux.conf'
 alias ,ev='$EDITOR ~/.config/nvim/init.vim'
 
-alias dco='docker-compose'
+alias dco='docker compose'
 alias dps='docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Image}}"'
 
 # ================================= #
