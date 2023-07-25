@@ -43,7 +43,8 @@ if [ -d "$HOME/.goenv" ];then
     export PATH=$PATH:$HOME/go/*/bin
     eval "$(goenv init -)"
 fi
-[ -f "/etc/bash_completion" ] && source /etc/bash_completion;export PS1="\\w\[\033[0;32m\]\$(__git_ps1 ' (%s)')\[\033[0m\] \$ "
+GIT_PROMPT="/usr/share/git-core/contrib/completion/git-prompt.sh"
+[ -f $GIT_PROMPT ] && source $GIT_PROMPT;export PS1="\\w\[\033[0;32m\]\$(__git_ps1 ' (%s)')\[\033[0m\] \$ "
 
 # ================================= #
 # ============== END ============== #
